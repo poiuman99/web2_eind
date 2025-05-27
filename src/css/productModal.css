@@ -1,0 +1,173 @@
+/* src/css/productModal.css */
+
+/* De semi-transparante overlay die over de hele pagina ligt */
+.modal-overlay {
+  position: fixed; /* Blijft op zijn plaats, zelfs bij scrollen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Zwarte, semi-transparante achtergrond */
+  display: flex; /* Gebruik flexbox om de inhoud te centreren */
+  justify-content: center; /* Horizontaal centreren */
+  align-items: center; /* Verticaal centreren */
+  z-index: 1000; /* Zorg ervoor dat de modal boven alle andere elementen ligt */
+}
+
+/* De daadwerkelijke inhoud van de modal */
+.modal-content {
+  background: white; /* Witte achtergrond voor de modal zelf */
+  padding: 30px; /* Ruimte binnen de modal */
+  border-radius: 10px; /* Afgeronde hoeken */
+  text-align: center; /* Tekst en inline-elementen centreren */
+  position: relative; /* Nodig voor de absolute positionering van de sluitknop */
+  max-width: 90%; /* Maximale breedte op kleinere schermen */
+  width: 400px; /* Een vaste breedte voor grotere schermen */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Een lichte schaduw */
+  box-sizing: border-box; /* Padding en border worden meegerekend in de breedte/hoogte */
+}
+
+/* Sluitknop (de 'x') */
+.modal-close-btn {
+  position: absolute; /* Absolute positionering t.o.v. de modal-content */
+  top: 10px;
+  right: 10px;
+  background: none; /* Geen achtergrondkleur */
+  border: none; /* Geen rand */
+  font-size: 24px; /* Groter lettertype */
+  cursor: pointer; /* Verander cursor naar een handje */
+  color: #333; /* Donkergrijze tekstkleur */
+  transition: color 0.2s; /* Vloeiende overgang bij hover */
+}
+
+.modal-close-btn:hover {
+  color: #f00; /* Rood bij hover */
+}
+
+/* Afbeelding van het product in de modal */
+.modal-product-image {
+  max-width: 150px; /* Maximale breedte van de afbeelding */
+  height: auto; /* Behoud de aspect ratio */
+  border-radius: 8px; /* Afgeronde hoeken voor de afbeelding */
+  margin-bottom: 15px; /* Ruimte onder de afbeelding */
+}
+
+/* Sectie voor de hoeveelheidkiezer in de modal */
+.modal-quantity-selector {
+  display: flex; /* Gebruik flexbox voor de knoppen en het nummer */
+  justify-content: center; /* Horizontaal centreren */
+  align-items: center; /* Verticaal centreren */
+  margin-top: 15px; /* Ruimte boven de kiezer */
+}
+
+/* Knoppen in de hoeveelheidkiezer */
+.modal-quantity-selector button {
+  background: #007bff; /* Blauwe achtergrond */
+  color: white; /* Witte tekstkleur */
+  border: none; /* Geen rand */
+  border-radius: 5px; /* Afgeronde hoeken */
+  padding: 8px 15px; /* Padding */
+  font-size: 1.2em; /* Groter lettertype */
+  cursor: pointer; /* Handje cursor */
+  margin: 0 10px; /* Ruimte tussen de knoppen en het nummer */
+  transition: background-color 0.2s; /* Vloeiende overgang */
+}
+
+.modal-quantity-selector button:hover {
+  background-color: #0056b3; /* Donkerder blauw bij hover */
+}
+
+/* Weergave van de hoeveelheid */
+.modal-quantity-selector span {
+  font-size: 1.5em; /* Groter lettertype */
+  font-weight: bold; /* Vetgedrukt */
+}
+
+/* "Add to Cart" knop in de modal */
+.add-to-cart-modal-btn {
+  background: #28a745; /* Groene achtergrond */
+  color: white; /* Witte tekstkleur */
+  border: none; /* Geen rand */
+  border-radius: 5px; /* Afgeronde hoeken */
+  padding: 12px 25px; /* Padding */
+  font-size: 1.1em; /* Lettertype grootte */
+  cursor: pointer; /* Handje cursor */
+  margin-top: 20px; /* Ruimte boven de knop */
+  transition: background-color 0.2s; /* Vloeiende overgang */
+}
+
+.add-to-cart-modal-btn:hover {
+  background-color: #218838; /* Donkerder groen bij hover */
+}
+
+/* --- OPTIONELE CSS voor de winkelwagen overzicht (in footer van MenuPage) --- */
+
+.cart-summary-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Ruimte tussen de elementen */
+  padding: 5px 10px;
+  background-color: #f8f9fa; /* Lichtgrijze achtergrond */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Zachte schaduw */
+  margin-right: auto; /* Duwt het widget naar links als het in een flex container zit */
+}
+
+.cart-icon {
+  width: 25px; /* Breedte van het winkelwagenicoon */
+  height: auto;
+}
+
+.cart-item-count,
+.cart-total-price {
+  font-weight: bold;
+  color: #333;
+}
+
+/* --- OPTIONELE CSS voor de gedetailleerde winkelwagenlijst (in OrderPage) --- */
+
+.cart-detailed-list {
+  max-height: 400px; /* Max hoogte, zodat het kan scrollen als de lijst lang is */
+  overflow-y: auto; /* Voeg scrollen toe als inhoud de max-height overschrijdt */
+  border: 1px solid #eee; /* Lichte rand */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fdfdfd;
+}
+
+.cart-item-detail {
+  display: flex;
+  justify-content: space-between; /* Items en knop uit elkaar */
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee; /* Gestippelde lijn tussen items */
+}
+
+.cart-item-detail:last-child {
+  border-bottom: none; /* Geen lijn onder het laatste item */
+}
+
+.remove-from-cart-btn {
+  background: #dc3545; /* Rood voor verwijderen */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: #c82333; /* Donkerder rood bij hover */
+}
+
+/* Zorg ervoor dat de footer items van MenuPage goed gepositioneerd zijn */
+.order__summary {
+    display: flex;
+    justify-content: space-between; /* Items aan de uiteinden van de container */
+    align-items: center;
+    width: 100%;
+    padding: 0 20px; /* Pas padding aan indien nodig */
+}

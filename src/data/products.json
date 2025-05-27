@@ -1,0 +1,122 @@
+
+[
+  {
+    "id": "fries-small",
+    "name": "Small Fries",
+    "price": 2.50,
+    "category": "Fries",
+    "image": "/img/small_fries.jpg"
+  },
+  {
+    "id": "fries-medium",
+    "name": "Medium Fries",
+    "price": 3.50,
+    "category": "Fries",
+    "image": "/img/medium_fries.jpg"
+  },
+   {
+    "id": "fries-large",
+    "name": "Medium Fries",
+    "price": 4.00,
+    "category": "Fries",
+    "image": "/img/medium_fries.jpg"
+  },
+  {
+    "id": "burger-hamburger",
+    "name": "Hamburger",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/hamburger.jpg"
+  },
+  {
+    "id": "burger-cheeseburger",
+    "name": "Cheese-Burger",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/cheeseburger.jpg"
+  },
+  {
+    "id": "burger-bicky",
+    "name": "Bicky-Burger",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/bicky burger.webp"
+  },
+  {
+    "id": "burger-bicky-cheese",
+    "name": "Bicky-Cheese",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/bicky cheese.jpg"
+  },
+  {
+    "id": "burger-bicky-chicken",
+    "name": "Bicky-Chicken",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/bicky chicken.webp"
+  },
+  {
+    "id": "burger-bicky-fish",
+    "name": "Bicky-Fish",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/bicky fish.jpg"
+  },
+  {
+    "id": "burger-bicky-mexicano",
+    "name": "Bicky-Mexicano",
+    "price": 4.50,
+    "category": "Burgers",
+    "image": "/img/bicky mexicano.jpg"
+  },
+  {
+    "id": "snack-frikandel",
+    "name": "Frikandel",
+    "price": 2.00,
+    "category": "Snacks",
+    "image": "/img/frikandel.jpg"
+  },
+  {
+    "id": "snack-kroket",
+    "name": "Kroket",
+    "price": 2.20,
+    "category": "Snacks",
+    "image": "/img/kroket.jpg"
+  },
+  {
+    "id": "sauce-mayo",
+    "name": "Mayonaise",
+    "price": 0.80,
+    "category": "Sauces",
+    "image": "/img/mayo.jpg"
+  },
+  {
+    "id": "sauce-andalouse",
+    "name": "Andalouse",
+    "price": 0.90,
+    "category": "Sauces",
+    "image": "/img/andalouse.jpg"
+  },
+  {
+    "id": "drink-cocacola",
+    "name": "Coca Cola",
+    "price": 2.50,
+    "category": "Drinks",
+    "image": "/img/coca_cola.jpg"
+  },
+  {
+    "id": "drink-fanta",
+    "name": "Fanta",
+    "price": 2.50,
+    "category": "Drinks",
+    "image": "/img/fanta.jpg"
+  },
+  {
+    "id": "drink-water",
+    "name": "Water",
+    "price": 2.00,
+    "category": "Drinks",
+    "image": "/img/water.jpg"
+  }
+]

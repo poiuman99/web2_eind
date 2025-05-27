@@ -1,0 +1,85 @@
+body.payment {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    background-color: #fff700;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.payment__container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.payment__header {
+    margin-top: 0.5rem;
+}
+
+.payment__logo {
+    width: 80vw;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2vh;
+}
+
+.payment__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.payment__options {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 95%;
+    max-width: 350px;
+}
+
+.payment-option {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 4rem; 
+    width: 100%;
+    min-height: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.payment-option:hover {
+    transform: scale(1.03);
+}
+
+.payment-option__img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.payment-option__label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #222;
+}
