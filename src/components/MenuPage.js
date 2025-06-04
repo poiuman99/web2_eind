@@ -2,16 +2,19 @@
 import React, { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+// Importeer je productdata
 import productsData from '../data/products.json';
-import ProductModal from './ProductModal';
+import ProductModal from './ProductModal'; // Importeer de ProductModal component
+import { useCart } from '../context/CartContext'; // Importeer de useCart hook
 
-// Ontvang cart-gerelateerde props van App.js
-const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartPrice, totalCartItems }, ref) => {
+const MenuPage = React.forwardRef((props, ref) => {
   const navigate = useNavigate();
+  // Gebruik de useCart hook om toegang te krijgen tot de winkelwagen state en functies
+  const { addToCart, totalCartItems, totalCartPrice } = useCart();
 
-  const [selectedCategory, setSelectedCategory] = useState('Burgers');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProductForModal, setSelectedProductForModal] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('Burgers'); // Pas aan naar je startcategorie
+  const [isModalOpen, setIsModalOpen] = useState(false); // State voor het openen/sluiten van de modal
+  const [selectedProductForModal, setSelectedProductForModal] = useState(null); // State voor het product in de modal
 
   const categories = [
     { name: 'Fries', icon: '🍟' },
@@ -23,19 +26,25 @@ const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartP
   ];
 
   const filteredProducts = useMemo(() => {
-    return productsData.filter(product => product.category === selectedCategory);
+    // Voeg een filter toe om alleen producten met een geldige prijs te tonen
+    return productsData.filter(product =>
+      product.category === selectedCategory && typeof product.price === 'number'
+    );
   }, [selectedCategory]);
 
+  // Functie om de modal te openen met een specifiek product
   const openProductModal = (product) => {
     setSelectedProductForModal(product);
     setIsModalOpen(true);
   };
 
+  // Functie om de modal te sluiten
   const closeProductModal = () => {
     setIsModalOpen(false);
-    setSelectedProductForModal(null);
+    setSelectedProductForModal(null); // Reset het product
   };
 
+  // Navigatie functies
   const goToOrder = () => {
     navigate('/order');
   };
@@ -47,9 +56,7 @@ const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartP
   return (
     <div className="order" ref={ref}>
       <div className="order__container">
-        <header className="order__header">
-          <img src="/img/logo3-uitgeknipt beter copy.png" alt="Jetreken Logo" className="order__logo" />
-        </header>
+        
         <main className="order__main">
           <h1 className="order__menu-title">Menu</h1>
           <Link to="/takeaway" className="payment__back-button">&larr; Back</Link>
@@ -69,31 +76,25 @@ const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartP
               </ul>
             </nav>
             <section className="order__products">
-  <div className="products-grid">
-    {filteredProducts.map(product => (
-      <div
-        className="product-card"
-        key={product.id}
-        onClick={() => openProductModal(product)}
-        style={{ cursor: 'pointer' }}
-      >
-        <div className="product-card__img">
-          <img src={product.image} alt={product.name} />
-        </div>
-        <div className="product-card__name">{product.name}</div>
-        {/* EXTRA CONTROLE: Controleer voordat toFixed wordt aangeroepen */}
-        <div className="product-card__price">
-          {typeof product.price === 'number' ? `€${product.price.toFixed(2)}` : 'Price N/A'}
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
-
-// ... (en in de footer voor de totalen)
-<span className="cart-total-price">€{totalCartPrice.toFixed(2)}</span>
-// totalCartPrice wordt berekend met .reduce en zal altijd een nummer zijn (0 indien leeg),
-// dus hier is een extra controle minder snel nodig, tenzij de items zelf corrupt zijn.
+              <div className="products-grid">
+                {filteredProducts.map(product => (
+                  <div
+                    className="product-card"
+                    key={product.id}
+                    onClick={() => openProductModal(product)} // <<-- Klik op de kaart opent de modal
+                    style={{ cursor: 'pointer' }} // Optioneel, voor visuele feedback
+                  >
+                    <div className="product-card__img">
+                      <img src={product.image} alt={product.name} />
+                    </div>
+                    <div className="product-card__name">{product.name}</div>
+                    {/* Zorg dat de prijs altijd een nummer is door de filter in filteredProducts */}
+                    <div className="product-card__price">€{product.price.toFixed(2)}</div>
+                    {/* De "Add to Cart" knop is verwijderd uit de product-card */}
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </main>
         <footer className="order__footer">
@@ -101,7 +102,7 @@ const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartP
           <div className="order__summary">
             {/* COMPACTE WINKELWAGEN WEERGAVE HIER */}
             <div className="cart-summary-widget">
-              <img src="/img/cart_icon.png" alt="Shopping Cart" className="cart-icon" width="30" />
+              <img src="/img/pngegg.png" alt="Shopping Cart" className="cart-icon" width="30" />
               <span className="cart-item-count">{totalCartItems} items</span>
               <span className="cart-total-price">€{totalCartPrice.toFixed(2)}</span>
             </div>
@@ -111,12 +112,12 @@ const MenuPage = React.forwardRef(({ cart, addToCart, removeFromCart, totalCartP
         </footer>
       </div>
 
-      {/* Product Modal component blijft hier */}
+      {/* De Product Modal component */}
       {isModalOpen && (
         <ProductModal
           product={selectedProductForModal}
-          onAddToCart={addToCart}
-          onClose={closeProductModal}
+          onAddToCart={addToCart} // Geef de addToCart functie door
+          onClose={closeProductModal} // Geef de close functie door
         />
       )}
     </div>

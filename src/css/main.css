@@ -3,3 +3,19 @@
 @import 'menu.css';
 @import 'order.css';
 @import 'payment.css';
+@import 'Header.css';
+
+
+/* Voeg dit toe aan je index.css of App.css */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Optioneel: voorkom scrollbars */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff000; /* Pas aan naar jouw kleur */
+}

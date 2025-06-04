@@ -1,12 +1,12 @@
-// src/components/Payment.js
-
 import React from 'react';
 // Importeer Link en useNavigate voor navigatie
 import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // Importeer de useCart hook
 
 // BELANGRIJK: Wikkel de componentdefinitie in React.forwardRef
 const Payment = React.forwardRef((props, ref) => {
   const navigate = useNavigate(); // Initialiseer useNavigate hook
+  const { cart, removeFromCart, totalCartPrice } = useCart();
 
   // Functie voor de klik op contant betalen
   const handleCashClick = () => {
@@ -22,9 +22,9 @@ const Payment = React.forwardRef((props, ref) => {
     // BELANGRIJK: Pas de 'ref' toe op het TOP-LEVEL DOM-element van deze component
     <div className="payment" ref={ref}>
       <div className="payment__container">
-        <div className="payment__header">
-          {/* BELANGRIJK: Pas het afbeeldingspad aan als je img map in public/ staat. */}
-          <img src="/img/logo3-uitgeknipt beter copy.png" className="payment__logo" alt="logo" />
+        {/* Toon het te betalen bedrag bovenaan */}
+        <div className="payment__amount">
+          Amount to pay: <span className="payment__amount-value">Total= €{totalCartPrice.toFixed(2)}</span>
         </div>
         <div className="payment__title">Payment</div>
         <div className="payment__back">

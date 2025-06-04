@@ -48,38 +48,46 @@ body.payment {
     justify-content: center;
     gap: 1.5rem;
     width: 95%;
-    max-width: 350px;
+    max-width: 340px;
 }
 
 .payment-option {
     background: #fff;
     border: 2px solid #000;
-    border-radius: 12px;
-    padding: 4rem; 
+    border-radius: 16px;
+    padding: 2rem;
     width: 100%;
-    min-height: 300px; 
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     cursor: pointer;
     transition: transform 0.2s ease;
+    font-size: 2rem;
 }
 
 .payment-option:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .payment-option__img {
     width: 100%;
-    max-height: 200px;
+    max-height: 110px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
 .payment-option__label {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: #222;
+}
+.payment__amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    margin: 1.5rem 0;
+    text-align: center;
 }

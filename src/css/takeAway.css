@@ -5,59 +5,72 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    font-size: 22px; 
 }
 .header {
-    margin-top: 20px;
+    margin-top: 40px; 
 }
 
 .logo {
-    width: 60vw;
-    max-width: 300px;
+    width: 80vw;
+    max-width: 400px;
     height: auto;
-    margin-bottom: 4vh;
+    margin-bottom: 6vh;
 }
 
 .buttons {
-    margin: 20px 0;
-
+    margin: 40px 0;
 }
 .buttons__button {
     display: inline-block;
-    margin: 10px;
+    margin: 20px;
     text-align: center;
-    border: 1px solid #000; /* Zwarte border */
-    border-radius: 10px; /* Afgeronde hoeken */
-    background-color: #fff; /* Witte achtergrondkleur */
+    border: 2px solid #000;
+    border-radius: 16px;
+    background-color: #fff;
+    padding: 16px 0;
+    min-width: 160px;
 }
 .buttons__button:hover {
-    background-color: #e0e0e0; /* Lichte achtergrondkleur bij hover */
+    background-color: #e0e0e0;
 }
 .buttons__text {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
-    padding: 10px;
+    padding: 0px;
 }
 .buttons__image {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     display: block;
     margin: 0 auto;
 }
 .languages {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 .languages__title {
-    margin-bottom: 10px;
+    margin-bottom: 18px;
+    font-size: 2.5rem;
 }
 .languages__button {
     display: inline-block;
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 0 18px;
+    padding: 18px 32px;
     background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: 2px solid #000;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 20px;
 }
 .languages__button:hover {
     background-color: #e0e0e0;
+}
+.languages__flag {
+    width: 64px;
+    height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.languages__button .languages__flag {
+    margin-bottom: 12px;
 }

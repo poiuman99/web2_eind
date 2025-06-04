@@ -1,18 +1,12 @@
-// src/components/Header.js
-import React from 'react';
-import '../css/Header.css'; // Als Header.css in src/css/ staat
+import React from 'react'
 
 function Header() {
   return (
-    <header className="main-header">
-      <nav>
-        {/* Kopieer hier je HTML voor de navigatiebalk */}
-        <a href="/">Home</a>
-        <a href="/about">Over ons</a>
-        {/* ... meer navigatie links */}
-      </nav>
-    </header>
-  );
+    <header className="app-header">
+          {/* Zorg dat je logo de class 'app-logo' heeft */}
+          <img src="/img/logo3-uitgeknipt beter copy.png" alt="Jetreken Logo" className="app-logo" />
+        </header>
+  )
 }
 
-export default Header;
+export default Header

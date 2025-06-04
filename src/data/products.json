@@ -1,122 +1,261 @@
-
 [
+  {
+    "id": "fries-children",
+    "name": "Children Fries",
+    "price": 1.50,
+    "category": "Fries",
+    "image": "/img/small_fries.jpg",
+    "description": "Krokante frietjes, perfect voor de kleintjes.",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Zout",
+        "choices": [
+          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "with-salt"
+      }
+    ]
+  },
+  {
+    "id": "fries-mini",
+    "name": "Mini Fries",
+    "price": 2.50,
+    "category": "Fries",
+    "image": "/img/small_fries.jpg",
+    "description": "Onze heerlijke frietjes in een mini-formaat.",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Zout",
+        "choices": [
+          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "with-salt"
+      }
+    ]
+  },
   {
     "id": "fries-small",
     "name": "Small Fries",
-    "price": 2.50,
+    "price": 3.00,
     "category": "Fries",
-    "image": "/img/small_fries.jpg"
+    "image": "/img/small_fries.jpg",
+    "description": "De klassieke kleine portie friet.",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Zout",
+        "choices": [
+          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "with-salt"
+      }
+    ]
   },
   {
     "id": "fries-medium",
     "name": "Medium Fries",
     "price": 3.50,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg"
+    "image": "/img/medium_fries.jpg",
+    "description": "De perfecte middelgrote portie friet.",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Zout",
+        "choices": [
+          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "with-salt"
+      }
+    ]
   },
-   {
+  {
     "id": "fries-large",
-    "name": "Medium Fries",
-    "price": 4.00,
+    "name": "Large Fries",
+    "price": 4.50,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg"
+    "image": "/img/medium_fries.jpg",
+    "description": "Een royale portie friet om te delen (of niet!).",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Zout",
+        "choices": [
+          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "with-salt"
+      }
+    ]
+  },
+  {
+    "id": "Julientje",
+    "name": "Julientje",
+    "price": 9.00,
+    "category": "Fries",
+    "image": "/img/medium_fries.jpg",
+    "description": "Een hartige portie friet met een malse vleesvariant en speciale saus.",
+    "options": []
+  },
+  {
+    "id": "Lucske",
+    "name": "Lucske",
+    "price": 9.00,
+    "category": "Fries",
+    "image": "/img/medium_fries.jpg",
+    "description": "Een royale portie friet met een heerlijke combinatie van vlees en toppings.",
+    "options": []
+  },
+  {
+    "id": "Romboutje",
+    "name": "Romboutje",
+    "price": 9.00,
+    "category": "Fries",
+    "image": "/img/medium_fries.jpg",
+    "description": "De klassieke Romboutje, perfect gebakken en lekker knapperig.",
+    "options": []
   },
   {
     "id": "burger-hamburger",
     "name": "Hamburger",
     "price": 4.50,
     "category": "Burgers",
-    "image": "/img/hamburger.jpg"
+    "image": "/img/hamburger.jpg",
+    "options": []
   },
   {
     "id": "burger-cheeseburger",
     "name": "Cheese-Burger",
-    "price": 4.50,
+    "price": 4.80,
     "category": "Burgers",
-    "image": "/img/cheeseburger.jpg"
+    "image": "/img/cheeseburger.jpg",
+    "options": []
   },
   {
     "id": "burger-bicky",
     "name": "Bicky-Burger",
     "price": 4.50,
     "category": "Burgers",
-    "image": "/img/bicky burger.webp"
+    "image": "/img/bicky burger.webp",
+    "options": []
   },
   {
     "id": "burger-bicky-cheese",
     "name": "Bicky-Cheese",
-    "price": 4.50,
+    "price": 4.80,
     "category": "Burgers",
-    "image": "/img/bicky cheese.jpg"
+    "image": "/img/bicky cheese.jpg",
+    "options": []
   },
   {
     "id": "burger-bicky-chicken",
     "name": "Bicky-Chicken",
     "price": 4.50,
     "category": "Burgers",
-    "image": "/img/bicky chicken.webp"
+    "image": "/img/bicky chicken.webp",
+    "options": []
   },
   {
     "id": "burger-bicky-fish",
     "name": "Bicky-Fish",
     "price": 4.50,
     "category": "Burgers",
-    "image": "/img/bicky fish.jpg"
+    "image": "/img/bicky fish.jpg",
+    "options": []
   },
   {
     "id": "burger-bicky-mexicano",
     "name": "Bicky-Mexicano",
     "price": 4.50,
     "category": "Burgers",
-    "image": "/img/bicky mexicano.jpg"
+    "image": "/img/bicky mexicano.jpg",
+    "options": []
   },
   {
     "id": "snack-frikandel",
     "name": "Frikandel",
     "price": 2.00,
     "category": "Snacks",
-    "image": "/img/frikandel.jpg"
+    "image": "/img/frikandel.jpg",
+    "options": []
   },
   {
     "id": "snack-kroket",
     "name": "Kroket",
     "price": 2.20,
     "category": "Snacks",
-    "image": "/img/kroket.jpg"
+    "image": "/img/kroket.jpg",
+    "options": []
+  },
+  {
+    "id": "snack-curryworst-special",
+    "name": "Curryworst Special",
+    "price": 3.00,
+    "category": "Snacks",
+    "image": "/img/curryworst.png",
+    "description": "Lekkere curryworst met een saus naar keuze.",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Saus",
+        "choices": [
+          { "label": "Currysaus", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomatenketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
   },
   {
     "id": "sauce-mayo",
     "name": "Mayonaise",
     "price": 0.80,
     "category": "Sauces",
-    "image": "/img/mayo.jpg"
+    "image": "/img/mayo.jpg",
+    "options": []
   },
   {
     "id": "sauce-andalouse",
     "name": "Andalouse",
     "price": 0.90,
     "category": "Sauces",
-    "image": "/img/andalouse.jpg"
+    "image": "/img/andalouse.jpg",
+    "options": []
   },
   {
     "id": "drink-cocacola",
     "name": "Coca Cola",
     "price": 2.50,
     "category": "Drinks",
-    "image": "/img/coca_cola.jpg"
+    "image": "/img/coca_cola.jpg",
+    "options": []
   },
   {
     "id": "drink-fanta",
     "name": "Fanta",
     "price": 2.50,
     "category": "Drinks",
-    "image": "/img/fanta.jpg"
+    "image": "/img/fanta.jpg",
+    "options": []
   },
   {
     "id": "drink-water",
     "name": "Water",
     "price": 2.00,
     "category": "Drinks",
-    "image": "/img/water.jpg"
+    "image": "/img/water.jpg",
+    "options": []
   }
 ]

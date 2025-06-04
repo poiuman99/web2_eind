@@ -1,0 +1,19 @@
+/* src/css/main.css */
+
+/* --- Logo Styling --- */
+.app-logo {
+  display: block; /* Zorgt ervoor dat margin auto werkt voor centreren */
+  max-width: 180px; /* **Pas deze waarde aan** voor de gewenste grootte */
+  height: auto; /* Behoud de aspect ratio */
+  margin: 0 auto; /* Centreert het element horizontaal */
+  padding: 10px 0; /* Voeg wat verticale padding toe boven en onder het logo */
+  box-sizing: border-box; /* Zorgt dat padding de breedte/hoogte niet vergroot */
+}
+
+/* Eventueel specifieke aanpassingen voor de header zelf */
+.app-header {
+  text-align: center; /* Centreert content zoals het logo binnen de header */
+  padding: 10px 0;
+  background-color: #fff000; /* Lichtgrijze achtergrond voor de header */
+   /* Zachte schaduw onder de header */
+}

@@ -24,10 +24,7 @@ const TakeAway = React.forwardRef((props, ref) => {
     // en pas de 'ref' toe op dit buitenste element. Dit is cruciaal voor de animaties.
     <div className="take-away-page-wrapper" ref={ref}>
       {/* HEADER */}
-      <header className="header">
-        {/* BELANGRIJK: Pas het afbeeldingspad aan als je img map in public/ staat. */}
-        <img className="logo" src="/img/logo3-uitgeknipt beter copy.png" alt="Logo" width="150" />
-      </header>
+      
 
       {/* TERUGKNOP: Gebruik Link component voor interne navigatie */}
       {/* Ik ga ervan uit dat 'index.html' nu de root-route '/' is in React Router */}
@@ -57,14 +54,23 @@ const TakeAway = React.forwardRef((props, ref) => {
         </div>
       </div>
 
-      {/* TAALKEUZE */}
-      <div className="languages">
-        <h2 className="languages__title">Select Language</h2>
-        <div className="languages__button">English</div>
-        <div className="languages__button">Dutch</div>
-        <div className="languages__button">French</div>
-      </div>
-    </div> // Sluitende tag voor de nieuwe wrapper-div
+      
+        <div className="languages">
+          <h2 className="languages__title">Select Language</h2>
+          <div className="languages__button">
+            <img src="/img/vlag uk.png" alt="English flag" className="languages__flag" /><br />
+            English
+          </div>
+          <div className="languages__button">
+            <img src="/img/vlag nederland.webp" alt="Dutch flag" className="languages__flag" /><br />
+            Dutch
+          </div>
+          <div className="languages__button">
+            <img src="/img/flag frankrijk.png" alt="French flag" className="languages__flag" /><br />
+            French
+          </div>
+        </div>
+          </div> // Sluitende tag voor de nieuwe wrapper-div
   );
 }); // BELANGRIJK: Vergeet de puntkomma hier niet na de sluitende haakjes!
 

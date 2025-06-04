@@ -10,7 +10,7 @@ const ThankYou = React.forwardRef((props, ref) => {
     <div className="order-screen" ref={ref}>
       <div className="order-screen__container">
         {/* BELANGRIJK: Pas het afbeeldingspad aan als je img map in public/ staat. */}
-        <img src="/img/logo3-uitgeknipt beter copy.png" alt="Jetreken Logo" className="order-screen__logo" />
+        
 
         <div className="order-screen__text">
           <p className="order-screen__order">ENJOY YOUR MEAL</p>

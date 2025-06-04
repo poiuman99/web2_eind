@@ -1,84 +1,106 @@
-/* Algemene reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body.order-screen {
-  background-color: #fff000;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  min-height: 100vh;
+.start-page-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100vw;  
+  background-color: #fff000;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* Container */
-.order-screen__container {
+.start-page-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0; 
+  box-sizing: border-box;
+}
+
+.start-page-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2vh 2vw;
-  max-width: 600px;
-  width: 90%;
+  gap: 60px; 
+  max-width: 900px;
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Logo */
-.order-screen__logo {
-  width: 60vw;
-  max-width: 300px;
+.start-page-logo {
+  max-width: clamp(250px, 50vw, 400px);
   height: auto;
-  margin-bottom: 4vh;
 }
 
-/* Tekst */
-.order-screen__order {
-  font-size: 6vw;
+.start-page-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.start-page-order-text {
+  font-size: clamp(4em, 10vw, 7em);
   font-weight: bold;
+  color: #000000;
+  margin: 0;
+  line-height: 1.1;
 }
 
-.order-screen__here {
-  font-size: 8vw;
+.start-page-here-text {
+  font-size: clamp(3em, 8vw, 5em);
   font-weight: bold;
-  margin-bottom: 4vh;
+  color: #000000;
+  margin: 0;
+  line-height: 1.1;
 }
 
-/* Mascotte */
-.order-screen__mascot {
-  width: 70vw;
-  max-width: 300px;
+.start-page-mascot {
+  max-width: clamp(350px, 35vw, 350px);
   height: auto;
-  margin: 4vh 0;
+  
 }
 
-/* Instructie */
-.order-screen__instruction {
-  font-size: 3vw;
-  max-width: 90%;
-  margin-top: 2vh;
+.start-page-instruction {
+  font-size: clamp(1.5em, 3vw, 2.5em);
+  color: #000000;
+  margin-top: 0px;
 }
 
-/* Responsive fix voor grotere schermen */
-@media (min-width: 768px) {
-  .order-screen__order {
-    font-size: 3vw;
-  }
+.start-page-link:hover {
+  opacity: 0.95;
+  transform: scale(1.02);
+  transition: opacity 0.3s, transform 0.3s;
+}
 
-  .order-screen__here {
-    font-size: 4vw;
+/* Media Queries voor kleinere schermen */
+@media (max-width: 600px), (max-height: 600px) {
+  .start-page-content {
+    gap: 30px;
+    padding: 0 10px;
   }
-
-  .order-screen__instruction {
-    font-size: 1.5vw;
+  .start-page-logo {
+    max-width: 150px;
   }
-
-  .order-screen__logo {
-    width: 30vw;
+  .start-page-order-text {
+    font-size: clamp(2em, 8vw, 4em);
   }
-
-  .order-screen__mascot {
-    width: 20vw;
+  .start-page-here-text {
+    font-size: clamp(1.5em, 6vw, 3em);
+  }
+  .start-page-instruction {
+    font-size: clamp(1em, 2vw, 1.5em);
+  }
+  .start-page-link {
+    padding: 10px 0;
   }
 }
