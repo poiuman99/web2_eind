@@ -6,7 +6,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState({});
 
-  // Initialiseer standaard opties
+  // Initialize default options
   useEffect(() => {
     if (product.options) {
       const defaults = {};
@@ -37,11 +37,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
   };
 
   const handleAddToCart = () => {
-    onAddToCart({
-      ...product,
-      quantity,
-      selectedOptions
-    });
+    onAddToCart(product, quantity, selectedOptions);
     onClose();
   };
 
@@ -66,7 +62,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
         <img src={product.image} alt={product.name} className="modal-product-image" />
         <p className="product-price">€{product.price.toFixed(2)}</p>
 
-        {/* Product opties */}
+        {/* Product options */}
         {product.options?.map(option => (
           <div key={option.name} className="modal-option-group">
             <h4>{option.name}:</h4>
@@ -99,7 +95,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
         </div>
 
         <button className="add-to-cart-modal-btn" onClick={handleAddToCart}>
-          Voeg {quantity} toe aan winkelwagen - €{calculateTotalPrice()}
+          Add {quantity} to cart - €{calculateTotalPrice()}
           {Object.keys(selectedOptions).length > 0 && 
             ` (${Object.values(selectedOptions).map(opt => opt.label).join(', ')})`
           }

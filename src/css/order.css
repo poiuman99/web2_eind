@@ -1,57 +1,140 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #fff000;
+  background-color: #fff000; /* Felgele achtergrond zoals gevraagd */
+  display: flex; /* Gebruik flexbox om de inhoud te centreren */
+  justify-content: center; /* Horizontaal centreren */
+  align-items: flex-start; /* Items bovenaan de flex-container uitlijnen, zodat het niet midden op de pagina "zweeft" bij weinig content */
+  min-height: 100vh; /* Zorgt ervoor dat de body minstens de volledige hoogte van de viewport inneemt */
+  padding: 20px; /* Een beetje padding aan de body voor ademruimte, vooral op kleinere schermen */
+  box-sizing: border-box; /* Zorgt ervoor dat padding en border binnen de afmetingen vallen */
 }
 
-.container {
-  padding: 20px;
-  max-width: 420px; 
-  margin: auto;
+/* De witte box in het midden */
+.order-page-wrapper { /* Dit is nu de selector voor je witte box */
+  background-color: white; /* De witte achtergrond voor de centrale box */
+  border-radius: 20px; /* Afgeronde hoeken voor de witte box */
+  padding: 25px; /* Meer interne ruimte in de witte box */
+  max-width: 480px; /* Maximale breedte van de witte box */
+  width: 100%; /* Zorgt ervoor dat de box zo breed mogelijk is binnen max-width */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Een duidelijkere schaduw voor een "zwevend" effect */
+  margin: 40px auto 20px auto; /* Ruimte bovenaan en onderaan, automatisch horizontaal centreren */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zorgt dat de inhoud van de box ook gecentreerd is */
+   max-height: 50vh; 
+  overflow-y: auto;
 }
 
 .logo {
   width: 60vw;
   max-width: 300px;
   height: auto;
-  margin-bottom: 4vh;
+  margin: 0 auto 4vh auto; /* Gecentreerd met wat marge onderaan */
+  display: block; /* Nodig om margin: auto te laten werken voor centrering */
 }
 
 h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem; /* Iets groter lettertype voor de titel */
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px; /* Meer ruimte onder de titel */
+  color: #333; /* Donkerder tekstkleur voor betere leesbaarheid */
 }
 
 .back {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Wat meer ruimte onder de terugknop */
   font-weight: bold;
   color: black;
   text-decoration: none;
+  text-align: center;
+  font-size: 1.1rem; /* Iets groter lettertype */
 }
 
-.item {
-  background-color: white;
-  border: 2px solid red;
-  border-radius: 20px;
-  padding: 15px;
-  margin-bottom: 10px;
+/* Styling voor elk individueel item in de bestelling */
+.cart-item-wrapper { /* Dit is nu de selector voor je items */
+  background-color: #f9f9f9; /* Lichtgrijze achtergrond voor elk item */
+  border: 1px solid #e0e0e0; /* Subtiele rand in plaats van hard rood */
+  border-radius: 12px; /* Afgeronde hoeken voor items */
+  padding: 15px 20px; /* Wat meer padding binnen de items */
+  margin-bottom: 12px; /* Ruimte tussen items */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 420px; 
-  margin: 0 auto 10px; /* Center items horizontally */
+  justify-content: space-between; /* Zorgt dat content links en knop rechts staat */
+  align-items: center; /* Verticaal centreren van content en knop */
+  gap: 15px; /* Ruimte tussen de item details en de knop */
+  transition: all 0.2s ease-in-out; /* Vloeiende overgang voor hover effecten */
 }
 
-.remove {
-  background: none;
+.cart-item-wrapper:last-child {
+  margin-bottom: 0; /* Geen marge onder het laatste item */
+}
+
+.cart-item-wrapper:hover {
+  border-color: red; /* Rand wordt rood bij hover */
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.1); /* Subtiele schaduw bij hover */
+}
+
+/* Specifieke stijlen voor de inhoud van een item */
+.cart-item-detail {
+  display: flex;
+  justify-content: space-between; /* Zorgt ervoor dat info en prijs verdeeld zijn */
+  align-items: center;
+  flex-grow: 1; /* Laat dit gedeelte zoveel mogelijk ruimte innemen */
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column; /* Naam en opties onder elkaar */
+  margin-right: 15px; /* Ruimte tussen info en prijs */
+}
+
+.cart-item-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.selected-options {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.cart-item-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #007bff; /* Een blauwe kleur voor de prijs */
+  white-space: nowrap; /* Voorkomt dat de prijs op een nieuwe regel springt */
+}
+
+/* De mooie verwijderknop */
+.remove-from-cart-btn { /* Dit is nu de selector voor je verwijderknop */
+  background-color: #ff4d4d; /* Een aantrekkelijkere rode kleur */
+  color: white;
   border: none;
-  color: black;
+  border-radius: 25px; /* Nog rondere knop */
+  padding: 10px 20px; /* Meer padding voor een grotere knop */
   font-weight: bold;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Vloeiende overgang */
+  flex-shrink: 0; /* Voorkomt dat de knop krimpt */
+  display: flex; /* Zorgt dat de tekst mooi gecentreerd blijft in de knop */
+  align-items: center;
+  justify-content: center;
 }
+
+.remove-from-cart-btn:hover {
+  background-color: #e60000; /* Donkerder rood bij hover */
+  transform: translateY(-1px); /* Licht omhoog bewegen bij hover */
+}
+
+.remove-from-cart-btn:active {
+  background-color: #cc0000; /* Nog donkerder rood bij klikken */
+  transform: translateY(0); /* Terug naar normale positie bij klikken */
+}
+
 
 .order__footer {
   width: 100vw; /* Full viewport width */

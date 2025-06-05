@@ -1,61 +1,86 @@
-import React from 'react';
-// Importeer Link en useNavigate voor navigatie
+import React, { useState } from 'react'; // Import useState
 import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // Importeer de useCart hook
+import { useCart } from '../context/CartContext';
 
-// BELANGRIJK: Wikkel de componentdefinitie in React.forwardRef
 const Payment = React.forwardRef((props, ref) => {
-  const navigate = useNavigate(); // Initialiseer useNavigate hook
+  const navigate = useNavigate();
   const { cart, removeFromCart, totalCartPrice } = useCart();
+  const [showPaymentProcessing, setShowPaymentProcessing] = useState(false);
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false); // Nieuwe state voor succesanimatie
 
   // Functie voor de klik op contant betalen
   const handleCashClick = () => {
-    navigate('/thankyou'); // Navigeer naar de bedankpagina
+    navigate('/thankyou');
   };
 
-  // Functie voor de klik op kaart betalen
+  // Functie voor de klik op kaart betalen (nu met verwerking en succesanimatie)
   const handleCardClick = () => {
-    navigate('/thankyou'); // Navigeer naar de bedankpagina
+    setShowPaymentProcessing(true); // Toon het "Volg stappen" scherm
+    setShowSuccessAnimation(false); // Zorg dat succesanimatie verborgen is bij start
+
+    // Simuleer betaalverwerkingstijd (bijv. 3 seconden)
+    setTimeout(() => {
+      setShowPaymentProcessing(false); // Verberg "Volg stappen" scherm
+      setShowSuccessAnimation(true); // Toon succesanimatie
+
+      // Na een korte tijd de succesanimatie te hebben getoond, navigeer naar bedankpagina
+      setTimeout(() => {
+        navigate('/thankyou');
+      }, 1500); // Toon succesanimatie voor 1.5 seconden
+    }, 3000); // Verwerking duurt 3 seconden
   };
 
   return (
-    // BELANGRIJK: Pas de 'ref' toe op het TOP-LEVEL DOM-element van deze component
     <div className="payment" ref={ref}>
       <div className="payment__container">
-        {/* Toon het te betalen bedrag bovenaan */}
+        {/* Betalingsbedrag en Terugknop blijven altijd zichtbaar */}
         <div className="payment__amount">
-          Amount to pay: <span className="payment__amount-value">Total= €{totalCartPrice.toFixed(2)}</span>
+          <span className="payment__amount-value">Total= €{totalCartPrice.toFixed(2)}</span>
         </div>
         <div className="payment__title">Payment</div>
         <div className="payment__back">
-          {/* BELANGRIJK: Gebruik de Link component voor interne navigatie in React Router */}
-          <Link to="/menu" className="payment__back-button">&larr; Back</Link> {/* Navigeer terug naar de menupagina */}
+          <Link to="/menu" className="payment__back-button">&larr; Back</Link>
         </div>
-        <div className="payment__options">
-          <div
-            className="payment-option"
-            // BELANGRIJK: Gebruik React's onClick event en de navigate functie
-            onClick={handleCashClick}
-            style={{ cursor: 'pointer' }}
-          >
-            {/* BELANGRIJK: Pas het afbeeldingspad aan */}
-            <img src="/img/cash.jpeg" className="payment-option__img" alt="Cash" />
-            <div className="payment-option__label">Cash</div>
+
+        {/* Conditionele rendering voor de verschillende schermen */}
+        {!showPaymentProcessing && !showSuccessAnimation ? (
+          // Toon betaalopties als er niets wordt verwerkt en er geen succes is
+          <div className="payment__options">
+            <div
+              className="payment-option"
+              onClick={handleCashClick}
+              style={{ cursor: 'pointer' }}
+            >
+              <img src="/img/cash.jpeg" className="payment-option__img" alt="Cash" />
+              <div className="payment-option__label">Cash</div>
+            </div>
+            <div
+              className="payment-option"
+              onClick={handleCardClick}
+              style={{ cursor: 'pointer' }}
+            >
+              <img src="/img/card.jpg" className="payment-option__img" alt="Card" />
+              <div className="payment-option__label">Card</div>
+            </div>
           </div>
-          <div
-            className="payment-option"
-            // BELANGRIJK: Gebruik React's onClick event en de navigate functie
-            onClick={handleCardClick}
-            style={{ cursor: 'pointer' }}
-          >
-            {/* BELANGRIJK: Pas het afbeeldingspad aan */}
-            <img src="/img/card.jpg" className="payment-option__img" alt="Card" />
-            <div className="payment-option__label">Card</div>
+        ) : showPaymentProcessing ? (
+          // Toon betaalverwerkingsscherm
+          <div className="payment-processing-screen">
+            <p className="processing-text">Volg de stappen op het betaalapparaat...</p>
+            <div className="spinner"></div> {/* Laadspinner */}
           </div>
-        </div>
+        ) : (
+          // Toon betaling geslaagd animatiescherm
+          <div className="payment-success-screen">
+            <div className="checkmark-circle">
+              <div className="checkmark">&#10004;</div> {/* Unicode vinkje */}
+            </div>
+            <p className="success-message">Betaling geslaagd!</p>
+          </div>
+        )}
       </div>
     </div>
   );
-}); // BELANGRIJK: Vergeet de puntkomma hier niet na de sluitende haakjes!
+});
 
 export default Payment;

@@ -1,43 +1,48 @@
 // src/components/Order.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // Importeer de useCart hook
+import { useCart } from '../context/CartContext';
 
 const Order = React.forwardRef((props, ref) => {
   const navigate = useNavigate();
-  // Haal de winkelwagen en removeFromCart functie op uit de context
   const { cart, removeFromCart, totalCartPrice } = useCart();
 
-  const goToMenu = () => {
-    navigate('/menu');
-  };
-
-  const goToPayment = () => {
-    navigate('/payment');
-  };
+  const goToMenu = () => navigate('/menu');
+  const goToPayment = () => navigate('/payment');
 
   return (
     <div className="order-page-wrapper" ref={ref}>
       <div className="container">
-      
-
         <h1>Order details</h1>
 
-        {/* DIT IS DE GEDETAILLEERDE LIJST VAN WINKELWAGEN ITEMS */}
         <div className="cart-detailed-list">
           {cart.length === 0 ? (
             <p>Your cart is empty.</p>
           ) : (
-            cart.map(item => (
-              <div className="cart-item-detail" key={item.product.id}>
-                <span>
-                  {item.quantity}x {item.product.name} -
-                  {/* Zorg ervoor dat de prijs geldig is voordat toFixed wordt aangeroepen */}
-                  {typeof item.product.price === 'number' ? `€${(item.product.price * item.quantity).toFixed(2)}` : 'Price N/A'}
-                </span>
+            cart.map((item) => (
+              <div key={`${item.product.id}-${JSON.stringify(item.selectedOptions)}`} className="cart-item-wrapper">
+                <div className="cart-item-detail">
+                  <div className="cart-item-info">
+                    <span className="cart-item-name">
+                      {item.quantity}x {item.product.name}
+                    </span>
+                    {item.selectedOptions && Object.keys(item.selectedOptions).length > 0 && (
+                      <div className="selected-options">
+                        {Object.entries(item.selectedOptions).map(([optionName, optionValue]) => (
+                          <span key={optionName} className="selected-option">
+                            {optionName}: {optionValue.label}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <span className="cart-item-price">
+                    €{(item.product.price * item.quantity).toFixed(2)}
+                  </span>
+                </div>
                 <button
                   className="remove-from-cart-btn"
-                  onClick={() => removeFromCart(item.product.id)} // Verwijder één item per klik
+                  onClick={() => removeFromCart(item.product.id)}
                 >
                   Remove
                 </button>
@@ -45,17 +50,16 @@ const Order = React.forwardRef((props, ref) => {
             ))
           )}
         </div>
-
       </div>
 
       <footer className="order__footer">
         <div className="order__order-type">Order-Eat In</div>
         <div className="order__summary">
-          <div className="order__total">Total= €{totalCartPrice.toFixed(2)}</div>
-          <button
-            className="order__details-btn"
-            onClick={goToMenu}
-          >
+          <div className="cart-summary-widget">
+              <img src="/img/pngegg.png" alt="Shopping Cart" className="cart-icon" width="30" />
+              <div className="order__total">Total: €{totalCartPrice.toFixed(2)}</div>
+            </div>
+          <button className="order__details-btn" onClick={goToMenu}>
             ← Back to Menu
           </button>
         </div>

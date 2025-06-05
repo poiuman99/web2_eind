@@ -1,3 +1,4 @@
+/* Jouw bestaande CSS - ONGEWIJZIGD */
 body.payment {
     margin: 0;
     padding: 0;
@@ -84,10 +85,148 @@ body.payment {
     font-weight: bold;
     color: #222;
 }
+
 .payment__amount {
     font-size: 2rem;
     font-weight: bold;
     color: #000;
     margin: 1.5rem 0;
     text-align: center;
+}
+
+/* --- NIEUWE STIJLEN VOOR BETALINGSVERWERKING EN SUCCESMELDING --- */
+
+/* Algemene basis voor de verwerkings- en succes-schermen */
+.payment-processing-screen,
+.payment-success-screen {
+    position: absolute; /* Plaats over de bestaande inhoud heen */
+    top: 50%; /* Centreer verticaal */
+    left: 50%; /* Centreer horizontaal */
+    transform: translate(-50%, -50%); /* Pas aan voor precieze centrering */
+    width: 90%; /* Breedte, aanpasbaar */
+    max-width: 400px; /* Maximale breedte */
+    padding: 30px;
+    background-color: #ffffff; /* Schone witte achtergrond */
+    border: 2px solid #000; /* Zwarte rand, passend bij je bestaande stijl */
+    border-radius: 20px; /* Afgeronde hoeken */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Duidelijke, zachte schaduw */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 300px; /* Voldoende hoogte voor de content */
+    z-index: 1000; /* Zorgt ervoor dat het boven de rest ligt */
+    animation: fadeInScale 0.4s ease-out forwards; /* Mooie fade-in met schaal effect */
+}
+
+/* Animatie voor het in beeld komen van de schermen */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Stijl voor de tekst "Volg de stappen op het betaalapparaat..." */
+.processing-text {
+    font-size: 1.8rem; /* Iets groter en duidelijker */
+    font-weight: bold;
+    color: #333; /* Donkergrijs */
+    margin-bottom: 40px; /* Meer ruimte onder de tekst */
+}
+
+/* De laadspinner */
+.spinner {
+    border: 8px solid #f3f3f3; /* Lichtgrijs */
+    border-top: 8px solid #007bff; /* Een mooie, duidelijke blauwe kleur */
+    border-radius: 50%;
+    width: 80px; /* Groter */
+    height: 80px; /* Groter */
+    animation: spin 1.2s linear infinite; /* Sneller en vloeiender spinnen */
+}
+
+/* Keyframes voor de spinner animatie */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styling voor het vinkje en de cirkel op het succes-scherm */
+.checkmark-circle {
+    width: 120px; /* Grotere cirkel */
+    height: 120px;
+    border-radius: 50%;
+    background-color: #28a745; /* Vriendelijk groen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3); /* Zachte groene schaduw */
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Mooie 'pop' animatie */
+}
+
+/* Keyframes voor de 'pop' animatie van de cirkel */
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.15); opacity: 1; } /* Even groter dan uiteindelijke grootte */
+    100% { transform: scale(1); }
+}
+
+.checkmark {
+    color: white; /* Wit vinkje */
+    font-size: 5rem; /* Zeer groot vinkje */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Lichte schaduw voor diepte */
+}
+
+/* Stijl voor de tekst "Betaling geslaagd!" */
+.success-message {
+    font-size: 2rem; /* Groot en duidelijk */
+    color: #28a745; /* Passend groen */
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
+    animation: fadeIn 0.8s ease-out 0.2s forwards; /* Fade-in met een kleine vertraging */
+}
+
+/* Algemene fade-in animatie (hergebruikt) */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media query voor kleinere schermen om de elementen compacter te maken */
+@media (max-width: 480px) {
+    .payment-processing-screen,
+    .payment-success-screen {
+        padding: 20px;
+        max-width: 95%; /* Neemt meer van de beschikbare breedte in */
+        min-height: 250px;
+    }
+
+    .processing-text {
+        font-size: 1.5rem;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+    }
+
+    .checkmark-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .checkmark {
+        font-size: 4rem;
+    }
+
+    .success-message {
+        font-size: 1.6rem;
+    }
 }

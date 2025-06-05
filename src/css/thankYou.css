@@ -1,72 +1,18 @@
-/* Algemene reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body.order-screen {
-    background-color: #fff000;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Container */
-  .order-screen__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2vh 2vw;
-    max-width: 600px;
-    width: 90%;
-  }
-  
-  /* Logo */
-  .order-screen__logo {
-    width: 60vw;
-    max-width: 300px;
-    height: auto;
-    margin-bottom: 4vh;
-  }
-  
-.order-screen__text {
-    font-size: 6vw;
-    font-weight: bold;
-  }
-  
-  
-  /* Mascotte */
-  .order-screen__mascot {
-    width: 70vw;
-    max-width: 300px;
-    height: auto;
-    margin: 4vh 0;
-  }
-  
-  /* Responsive fix voor grotere schermen */
-  @media (min-width: 768px) {
-    .order-screen__order {
-      font-size: 3vw;
-    }
-  
-    .order-screen__here {
-      font-size: 4vw;
-    }
-  
-    .order-screen__instruction {
-      font-size: 1.5vw;
-    }
-  
-    .order-screen__logo {
-      width: 30vw;
-    }
-  
-    .order-screen__mascot {
-      width: 20vw;
-    }
-  }
-  
+
+.order-screen__title {
+  font-size: 2.0rem; /* Nog grotere, prominente titel */
+  font-weight: bold;
+  color: #000; /* Zwarte kleur */
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+/* Stijl voor de instructietekst ("Enjoy your meal!") */
+.order-screen__instruction {
+  font-size: 1.6rem; /* Grotere, duidelijke tekst */
+  font-weight: bold;
+  color: #000; /* Zwarte kleur */
+  margin-bottom: 0px;
+  text-align: center;
+}
+

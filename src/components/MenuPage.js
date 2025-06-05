@@ -19,8 +19,10 @@ const MenuPage = React.forwardRef((props, ref) => {
   const categories = [
     { name: 'Fries', icon: '🍟' },
     { name: 'Burgers', icon: '🍔' },
-    { name: 'Snacks', icon: '🍢' },
-    { name: 'Veggie', icon: '🥗' },
+    { name: 'Snacks', icon: '🍖' },
+    { name: 'Satés', icon: '🍢' },
+    { name: 'Fingerfood', icon: '🍗' },
+    { name: 'Krokets', icon: '🫔' },
     { name: 'Sauces', icon: '🥫' },
     { name: 'Drinks', icon: '🥤' },
   ];
@@ -103,8 +105,7 @@ const MenuPage = React.forwardRef((props, ref) => {
             {/* COMPACTE WINKELWAGEN WEERGAVE HIER */}
             <div className="cart-summary-widget">
               <img src="/img/pngegg.png" alt="Shopping Cart" className="cart-icon" width="30" />
-              <span className="cart-item-count">{totalCartItems} items</span>
-              <span className="cart-total-price">€{totalCartPrice.toFixed(2)}</span>
+              <div className="order__total">Total: €{totalCartPrice.toFixed(2)}</div>
             </div>
             <button className="order__details-btn" onClick={goToOrder}>Order details</button>
           </div>

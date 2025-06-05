@@ -4,15 +4,14 @@
     "name": "Children Fries",
     "price": 1.50,
     "category": "Fries",
-    "image": "/img/small_fries.jpg",
-    "description": "Krokante frietjes, perfect voor de kleintjes.",
+    "image": "/img/friet.webp",
     "options": [
       {
         "type": "single-choice",
-        "name": "Zout",
+        "name": "Salt",
         "choices": [
-          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
-          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+          { "label": "With salt", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Without salt", "value": "without-salt", "price_change": 0.00 }
         ],
         "required": true,
         "default": "with-salt"
@@ -24,15 +23,14 @@
     "name": "Mini Fries",
     "price": 2.50,
     "category": "Fries",
-    "image": "/img/small_fries.jpg",
-    "description": "Onze heerlijke frietjes in een mini-formaat.",
+    "image": "/img/friet.webp",
     "options": [
       {
         "type": "single-choice",
-        "name": "Zout",
+        "name": "Salt",
         "choices": [
-          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
-          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+          { "label": "With salt", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Without salt", "value": "without-salt", "price_change": 0.00 }
         ],
         "required": true,
         "default": "with-salt"
@@ -44,15 +42,14 @@
     "name": "Small Fries",
     "price": 3.00,
     "category": "Fries",
-    "image": "/img/small_fries.jpg",
-    "description": "De klassieke kleine portie friet.",
+    "image": "/img/friet.webp",
     "options": [
       {
         "type": "single-choice",
-        "name": "Zout",
+        "name": "Salt",
         "choices": [
-          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
-          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+          { "label": "With salt", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Without salt", "value": "without-salt", "price_change": 0.00 }
         ],
         "required": true,
         "default": "with-salt"
@@ -64,15 +61,14 @@
     "name": "Medium Fries",
     "price": 3.50,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg",
-    "description": "De perfecte middelgrote portie friet.",
+    "image": "/img/friet.webp",
     "options": [
       {
         "type": "single-choice",
-        "name": "Zout",
+        "name": "Salt",
         "choices": [
-          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
-          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+          { "label": "With salt", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Without salt", "value": "without-salt", "price_change": 0.00 }
         ],
         "required": true,
         "default": "with-salt"
@@ -84,15 +80,14 @@
     "name": "Large Fries",
     "price": 4.50,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg",
-    "description": "Een royale portie friet om te delen (of niet!).",
+    "image": "/img/friet.webp",
     "options": [
       {
         "type": "single-choice",
-        "name": "Zout",
+        "name": "Salt",
         "choices": [
-          { "label": "Met zout", "value": "with-salt", "price_change": 0.00 },
-          { "label": "Zonder zout", "value": "without-salt", "price_change": 0.00 }
+          { "label": "With salt", "value": "with-salt", "price_change": 0.00 },
+          { "label": "Without salt", "value": "without-salt", "price_change": 0.00 }
         ],
         "required": true,
         "default": "with-salt"
@@ -104,8 +99,8 @@
     "name": "Julientje",
     "price": 9.00,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg",
-    "description": "Een hartige portie friet met een malse vleesvariant en speciale saus.",
+    "image": "/img/julientje.webp",
+    "description": "French fries, pieces of viandel, stew sauce, mayonnaise , dried onion and satay seasoning",
     "options": []
   },
   {
@@ -113,8 +108,8 @@
     "name": "Lucske",
     "price": 9.00,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg",
-    "description": "Een royale portie friet met een heerlijke combinatie van vlees en toppings.",
+    "image": "/img/lucske.webp",
+    "description": "French fries with satay seasoning, pieces of curry sausage, stew sauce and special sauce.",
     "options": []
   },
   {
@@ -122,8 +117,8 @@
     "name": "Romboutje",
     "price": 9.00,
     "category": "Fries",
-    "image": "/img/medium_fries.jpg",
-    "description": "De klassieke Romboutje, perfect gebakken en lekker knapperig.",
+    "image": "/img/romboutje.webp",
+    "description": "A variation on the classic Julien! French fries with satay seasoning. Joppie sauce, stew sauce and dried onions. On top of that a mexicano in small pieces!",
     "options": []
   },
   {
@@ -182,6 +177,8 @@
     "image": "/img/bicky mexicano.jpg",
     "options": []
   },
+
+
   {
     "id": "snack-frikandel",
     "name": "Frikandel",
@@ -190,15 +187,7 @@
     "image": "/img/frikandel.jpg",
     "options": []
   },
-  {
-    "id": "snack-kroket",
-    "name": "Kroket",
-    "price": 2.20,
-    "category": "Snacks",
-    "image": "/img/kroket.jpg",
-    "options": []
-  },
-  {
+{
     "id": "snack-curryworst-special",
     "name": "Curryworst Special",
     "price": 3.00,
@@ -208,54 +197,327 @@
     "options": [
       {
         "type": "single-choice",
-        "name": "Saus",
+        "name": "Sauce",
         "choices": [
-          { "label": "Currysaus", "value": "curry", "price_change": 0.00 },
-          { "label": "Tomatenketchup", "value": "ketchup", "price_change": 0.00 }
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
         ],
         "required": true,
         "default": "curry"
       }
     ]
   },
+
+
   {
-    "id": "sauce-mayo",
-    "name": "Mayonaise",
-    "price": 0.80,
+    "id": "snack-sate",
+    "name": "Saté",
+    "price": 4.80,
+    "category": "Satés",
+    "image": "/img/sate.webp",
+    "options": []
+  },
+  {
+    "id": "snack-kipsate",
+    "name": "Chicken-Saté",
+    "price": 4.80,
+    "category": "Satés",
+    "image": "/img/kipsate.webp",
+    "options": []
+  },
+  {
+    "id": "snack-vissate",
+    "name": "Fish- Saté",
+    "price": 4.50,
+    "category": "Satés",
+    "image": "/img/vis.webp",
+    "options": []
+  },
+  {
+    "id": "snack-kippenboutjes",
+    "name": "Drumsticks",
+    "price": 4.50,
+    "category": "Satés",
+    "image": "/img/kippenboutjes.webp",
+    "options": []
+  },
+  {
+    "id": "snack-sito",
+    "name": "Stio Gold",
+    "price": 4.50,
+    "category": "Satés",
+    "image": "/img/sito.webp",
+    "options": []
+  },
+  {
+    "id": "snack-zigeuner",
+    "name": "Zigeunerstick",
+    "price": 3.50,
+    "category": "Satés",
+    "image": "/img/zigeuner.webp",
+    "options": []
+  },
+  {
+    "id": "snack-crizly",
+    "name": "Crizly",
+    "price": 4.50,
+    "category": "Satés",
+    "image": "/img/crizly.webp",
+    "options": []
+  },
+  {
+    "id": "snack-Berepoot",
+    "name": "Berepoot",
+    "price": 3.50,
+    "category": "Satés",
+    "image": "/img/berepoot.webp",
+    "options": []
+  },
+  {
+    "id": "snack-Belcrunch",
+    "name": "Belcrunch DELUXE",
+    "price": 4.50,
+    "category": "Satés",
+    "image": "/img/belcrunch.webp",
+    "options": []
+  },
+ 
+
+
+  {
+    "id": "snack-kaaskroket",
+    "name": "Cheesekroket",
+    "price": 3.00,
+    "category": "Krokets",
+    "image": "/img/kaaskroket.webp",
+    "options": []
+  },
+   {
+    "id": "snack-garnaalkroket",
+    "name": "Chrimpkroket",
+    "price": 4.00,
+    "category": "Krokets",
+    "image": "/img/garnaalkroket.webp",
+    "options": []
+  },
+   {
+    "id": "snack-goulashkroket",
+    "name": "Goulashkroket",
+    "price": 3.00,
+    "category": "Krokets",
+    "image": "/img/goulashkroket.webp",
+    "options": []
+  },
+   {
+    "id": "snack-vleeskroket",
+    "name": "Meatkroket",
+    "price": 3.00,
+    "category": "Krokets",
+    "image": "/img/vleeskroket.webp",
+    "options": []
+  },
+   {
+    "id": "snack-ragouzi",
+    "name": "Ragouzi",
+    "price": 3.00,
+    "category": "Krokets",
+    "image": "/img/ragouzi.webp",
+    "options": []
+  },
+
+
+  {
+    "id": "sauce-stoofvlees",
+    "name": "Stew (hot)",
+    "price": 5.00,
     "category": "Sauces",
-    "image": "/img/mayo.jpg",
+    "image": "/img/stoofvlees.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-pepersaus",
+    "name": "Pepper Sauce (hot)",
+    "price": 3.00,
+    "category": "Sauces",
+    "image": "/img/pepersaus.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-stoofsaus",
+    "name": "Stew sauce (hot)",
+    "price": 2.50,
+    "category": "Sauces",
+    "image": "/img/stoofvlees saus.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-balletjes",
+    "name": "Balls in tomato sauce (hot)",
+    "price": 5.00,
+    "category": "Sauces",
+    "image": "/img/balletjes in tomatensaus.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-vol au vent",
+    "name": "Vol-au-vent (hot)",
+    "price": 5.00,
+    "category": "Sauces",
+    "image": "/img/vol au vent.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-chef",
+    "name": "Americain Chef",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/chef.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-maison",
+    "name": "Americain Maison",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/maison.webp",
     "options": []
   },
   {
     "id": "sauce-andalouse",
     "name": "Andalouse",
-    "price": 0.90,
+    "price": 1.00,
     "category": "Sauces",
-    "image": "/img/andalouse.jpg",
+    "image": "/img/andalouse.webp",
     "options": []
   },
   {
+    "id": "sauce-cocktail",
+    "name": "Cocktail",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/cocktail.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-curry ketchup",
+    "name": "Curry Ketchup",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/curry ketchup.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-tomato ketchup",
+    "name": "Tomato Ketchup",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/tomaten ketchup.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-mayo",
+    "name": "Mayonnaise",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/mayonaise.webp",
+    "options": []
+  },
+  {
+    "id": "sauce-joppie",
+    "name": "Joppie Sauce",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/joppie.webp",
+    "options": []
+  },
+    {
+    "id": "sauce-hannibal",
+    "name": "Hannibal",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/hannibal.webp",
+    "options": []
+  },
+
+    {
+    "id": "sauce-samurai",
+    "name": "Samurai",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/samurai.webp",
+    "options": []
+  },
+
+    {
+    "id": "sauce-tartaar",
+    "name": "Tartaar",
+    "price": 1.00,
+    "category": "Sauces",
+    "image": "/img/tartaar.webp",
+    "options": []
+  },
+
+    {
+    "id": "sauce-special",
+    "name": "Special Sauce",
+    "price": 1.70,
+    "category": "Sauces",
+    "image": "/img/special.webp",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Sauce",
+        "choices": [
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
+  },
+
+
+
+
+  {
     "id": "drink-cocacola",
     "name": "Coca Cola",
-    "price": 2.50,
+    "price": 2.00,
     "category": "Drinks",
-    "image": "/img/coca_cola.jpg",
+    "image": "/img/cola.webp",
+    "options": []
+  },
+   {
+    "id": "drink-zero",
+    "name": "Coca Cola zero",
+    "price": 2.00,
+    "category": "Drinks",
+    "image": "/img/zero.webp",
     "options": []
   },
   {
     "id": "drink-fanta",
     "name": "Fanta",
-    "price": 2.50,
+    "price": 2.00,
     "category": "Drinks",
-    "image": "/img/fanta.jpg",
+    "image": "/img/fanta.webp",
     "options": []
   },
   {
-    "id": "drink-water",
-    "name": "Water",
+    "id": "drink-ice tea",
+    "name": "Ice Tea",
     "price": 2.00,
     "category": "Drinks",
-    "image": "/img/water.jpg",
+    "image": "/img/ice tea.webp",
+    "options": []
+  },
+  {
+    "id": "drink-jupiler",
+    "name": "Ice Tea",
+    "price": 2.50,
+    "category": "Drinks",
+    "image": "/img/jupiler.webp",
     "options": []
   }
 ]

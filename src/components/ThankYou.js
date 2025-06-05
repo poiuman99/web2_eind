@@ -1,31 +1,57 @@
 // src/components/ThankYou.js
-import React from 'react';
-// Importeer Link voor navigatie
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // Importeer de useCart hook
 
-// BELANGRIJK: Wikkel de componentdefinitie in React.forwardRef
 const ThankYou = React.forwardRef((props, ref) => {
+  const navigate = useNavigate();
+  const { clearCart } = useCart(); // Haal clearCart op uit de context
+
+  useEffect(() => {
+    // Reset de winkelwagen zodra de ThankYou pagina laadt
+    clearCart();
+
+    // Stel de timer in voor de automatische navigatie
+    const timer = setTimeout(() => {
+      navigate('/'); // Navigeer naar de home page (aannemende dat '/' je home route is)
+    }, 10000); // 5000 milliseconden = 5 seconden
+
+    // Ruim de timer op als de component unmount voordat de 5 seconden om zijn
+    return () => clearTimeout(timer);
+  }, [navigate, clearCart]); // Voeg clearCart toe aan de dependency array
+
+  const [countdown, setCountdown] = React.useState(10);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCountdown((prev) => prev > 0 ? prev - 1 : 0);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    // BELANGRIJK: Pas de 'ref' toe op het TOP-LEVEL DOM-element van deze component
-    <div className="order-screen" ref={ref}>
-      <div className="order-screen__container">
-        {/* BELANGRIJK: Pas het afbeeldingspad aan als je img map in public/ staat. */}
-        
+    <div className="start-page-wrapper" ref={ref}>
+      <Link to="/menu" className="start-page-link">
+        <div className="start-page-content">
+          {/* Logo optioneel */}
+          {/* <img src="/img/your-logo.png" alt="Logo" className="start-page-logo" /> */}
 
-        <div className="order-screen__text">
-          <p className="order-screen__order">ENJOY YOUR MEAL</p>
-          <p className="order-screen__thank-you">Thank you for your order!</p>
+          <div className="start-page-text">
+            <p className="order-screen__title">THANK YOU FOR YOUR ORDER!</p>
+            <p className="order-screen__instruction">ENJOY YOUR MEAL!</p>
+          </div>
+
+          <img src="/img/frietman3-uitgeknipt.png" alt="Fries Mascot" className="start-page-mascot" />
+
+      
+          <p className="start-page-countdown">
+            Returning to home in {countdown} second{countdown !== 1 ? 's' : ''}...
+          </p>
         </div>
-
-        {/* BELANGRIJK: Pas het afbeeldingspad aan */}
-        <img src="/img/frietman3-uitgeknipt.png" alt="Fries Mascot" className="order-screen__mascot" />
-
-        {/* BELANGRIJK: Gebruik de Link component voor interne navigatie in React Router */}
-        {/* Ik ga ervan uit dat '/payment' de route is naar je betaalpagina */}
-        <Link to="/payment" className="order-screen__back-button">← Back</Link>
-      </div>
+      </Link>
     </div>
   );
-}); // BELANGRIJK: Vergeet de puntkomma hier niet na de sluitende haakjes!
+});
 
 export default ThankYou;
