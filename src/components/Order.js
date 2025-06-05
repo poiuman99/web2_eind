@@ -1,4 +1,3 @@
-// src/components/Order.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
@@ -53,7 +52,7 @@ const Order = React.forwardRef((props, ref) => {
       </div>
 
       <footer className="order__footer">
-        <div className="order__order-type">Order-Eat In</div>
+        <div className="order__order-type">Order</div>
         <div className="order__summary">
           <div className="cart-summary-widget">
               <img src="/img/pngegg.png" alt="Shopping Cart" className="cart-icon" width="30" />

@@ -1,0 +1,66 @@
+.inactivity-warning-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(0.3125rem);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.inactivity-warning-modal {
+    background-color: #fff;
+    padding: 1.875rem 2.5rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 28.125rem;
+    width: 90%;
+    animation: slideInFromTop 0.4s ease-out;
+}
+
+.inactivity-warning-modal h2 {
+    font-size: 2.2em;
+    color: #e67e22;
+    margin-bottom: 0.9375rem;
+}
+
+.inactivity-warning-modal p {
+    font-size: 1.3em;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 0.625rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-3.125rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .inactivity-warning-modal {
+        padding: 1.25rem 1.5625rem;
+    }
+    .inactivity-warning-modal h2 {
+        font-size: 1.8em;
+    }
+    .inactivity-warning-modal p {
+        font-size: 1.1em;
+    }
+}

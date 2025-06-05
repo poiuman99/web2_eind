@@ -1,37 +1,21 @@
-/* src/css/transitions.css */
-
-/* Stijl voor de beginstaat van de inkomende component */
 .fade-enter {
   opacity: 0;
-  /* Optioneel, voor slide: */
-  /* transform: translateX(100%); */
 }
 
-/* Stijl voor de actieve animatie van de inkomende component */
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms ease-in; /* Let op: 300ms moet matchen met timeout in App.js */
-  /* transform: translateX(0%); */
-  /* transition: opacity 300ms ease-in, transform 300ms ease-in; */
+  transition: opacity 0.3rem ease-in;
 }
 
-/* Stijl voor de beginstaat van de uitgaande component */
 .fade-exit {
   opacity: 1;
-  /* transform: translateX(0%); */
 }
 
-/* Stijl voor de actieve animatie van de uitgaande component */
 .fade-exit-active {
   opacity: 0;
-  transition: opacity 300ms ease-out; /* Let op: 300ms moet matchen met timeout in App.js */
-  /* transform: translateX(-100%); */
-  /* transition: opacity 300ms ease-out, transform 300ms ease-out; */
+  transition: opacity 0.3rem ease-out;
 }
 
-/* Optioneel: zorg dat absolute positionering is voor soepele overgangen */
-/* Dit is vaak nodig als componenten verschillende hoogtes hebben,
-   zodat de uitgaande en inkomende componenten elkaar niet beïnvloeden tijdens de transitie. */
 .fade-enter-active,
 .fade-exit-active {
   position: absolute;

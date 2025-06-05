@@ -1,24 +1,18 @@
-// src/components/ThankYou.js
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext'; // Importeer de useCart hook
+import { useCart } from '../context/CartContext';
 
 const ThankYou = React.forwardRef((props, ref) => {
   const navigate = useNavigate();
-  const { clearCart } = useCart(); // Haal clearCart op uit de context
+  const { clearCart } = useCart();
 
   useEffect(() => {
-    // Reset de winkelwagen zodra de ThankYou pagina laadt
     clearCart();
-
-    // Stel de timer in voor de automatische navigatie
     const timer = setTimeout(() => {
-      navigate('/'); // Navigeer naar de home page (aannemende dat '/' je home route is)
-    }, 10000); // 5000 milliseconden = 5 seconden
-
-    // Ruim de timer op als de component unmount voordat de 5 seconden om zijn
+      navigate('/');
+    }, 10000);
     return () => clearTimeout(timer);
-  }, [navigate, clearCart]); // Voeg clearCart toe aan de dependency array
+  }, [navigate, clearCart]);
 
   const [countdown, setCountdown] = React.useState(10);
 
@@ -26,30 +20,21 @@ const ThankYou = React.forwardRef((props, ref) => {
     const interval = setInterval(() => {
       setCountdown((prev) => prev > 0 ? prev - 1 : 0);
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="start-page-wrapper" ref={ref}>
-      <Link to="/menu" className="start-page-link">
-        <div className="start-page-content">
-          {/* Logo optioneel */}
-          {/* <img src="/img/your-logo.png" alt="Logo" className="start-page-logo" /> */}
-
-          <div className="start-page-text">
-            <p className="order-screen__title">THANK YOU FOR YOUR ORDER!</p>
-            <p className="order-screen__instruction">ENJOY YOUR MEAL!</p>
-          </div>
-
-          <img src="/img/frietman3-uitgeknipt.png" alt="Fries Mascot" className="start-page-mascot" />
-
-      
-          <p className="start-page-countdown">
-            Returning to home in {countdown} second{countdown !== 1 ? 's' : ''}...
-          </p>
+    <div className="thankyou-page-wrapper" ref={ref}>
+      <div className="thankyou-page-content">
+        <div className="thankyou-page-text">
+          <p className="thankyou-title">THANK YOU FOR YOUR ORDER!</p>
+          <p className="thankyou-instruction">ENJOY YOUR MEAL!</p>
         </div>
-      </Link>
+        <img src="/img/frietman3-uitgeknipt.png" alt="Fries Mascot" className="thankyou-mascot" />
+        <p className="thankyou-countdown">
+          Returning to home in {countdown} second{countdown !== 1 ? 's' : ''}...
+        </p>
+      </div>
     </div>
   );
 });

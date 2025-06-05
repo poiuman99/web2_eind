@@ -1,6 +1,3 @@
-/* src/css/productModal.css */
-
-/* De semi-transparante overlay die over de hele pagina ligt */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -14,27 +11,25 @@
   z-index: 1000;
 }
 
-/* De daadwerkelijke inhoud van de modal */
 .modal-content {
   background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 1.875rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.3);
   text-align: center;
   position: relative;
   max-width: 90%;
-  width: 400px;
+  width: 25rem;
   box-sizing: border-box;
 }
 
-/* Sluitknop (de 'x') */
 .modal-close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.625rem;
+  right: 0.625rem;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #333;
   transition: color 0.2s;
@@ -44,56 +39,51 @@
   color: #f00;
 }
 
-/* Product beschrijving */
 .product-description {
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   font-style: italic;
 }
 
-/* Product prijs */
 .product-price {
   font-weight: bold;
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 0.625rem 0;
 }
 
-/* Afbeelding van het product in de modal */
 .modal-product-image {
-  max-width: 150px;
+  max-width: 9.375rem;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.9375rem;
 }
 
-/* Optie groepen */
 .modal-option-group {
-  margin: 20px 0;
+  margin: 1.25rem 0;
 }
 
 .modal-option-group h4 {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-size: 1rem;
   color: #444;
 }
 
-/* Optie knoppen */
 .options-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 0.5rem;
+  margin-top: 0.625rem;
 }
 
 .option-btn {
-  padding: 8px 15px;
+  padding: 0.5rem 0.9375rem;
   border: 1px solid #ddd;
   background: #f5f5f5;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
   transition: all 0.2s;
-  min-width: 100px;
+  min-width: 6.25rem;
 }
 
 .option-btn:hover {
@@ -108,28 +98,26 @@
 
 .price-change {
   font-size: 0.8em;
-  margin-top: 3px;
+  margin-top: 0.1875rem;
   display: block;
 }
 
-/* Sectie voor de hoeveelheidkiezer in de modal */
 .modal-quantity-selector {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 25px 0;
+  margin: 1.5625rem 0;
 }
 
-/* Knoppen in de hoeveelheidkiezer */
 .modal-quantity-selector button {
   background: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
+  border-radius: 0.3125rem;
+  padding: 0.5rem 0.9375rem;
   font-size: 1.2em;
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 0.625rem;
   transition: background-color 0.2s;
 }
 
@@ -137,23 +125,21 @@
   background-color: #0056b3;
 }
 
-/* Weergave van de hoeveelheid */
 .modal-quantity-selector span {
   font-size: 1.5em;
   font-weight: bold;
-  min-width: 30px;
+  min-width: 1.875rem;
 }
 
-/* "Add to Cart" knop in de modal */
 .add-to-cart-modal-btn {
   background: #28a745;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 12px 25px;
+  border-radius: 0.3125rem;
+  padding: 0.75rem 1.5625rem;
   font-size: 1.1em;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   transition: background-color 0.2s;
   width: 100%;
 }

@@ -5,72 +5,72 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-size: 22px; 
+    font-size: 1rem;
 }
 .header {
-    margin-top: 40px; 
+    margin-top: 2.5rem;
 }
 
 .logo {
     width: 80vw;
-    max-width: 400px;
+    max-width: 25rem;
     height: auto;
-    margin-bottom: 6vh;
+    margin-bottom: 3.75rem;
 }
 
 .buttons {
-    margin: 40px 0;
+    margin: 2.5rem 0;
 }
 .buttons__button {
     display: inline-block;
-    margin: 20px;
+    margin: 1.25rem;
     text-align: center;
-    border: 2px solid #000;
-    border-radius: 16px;
+    border: 0.125rem solid #000;
+    border-radius: 1rem;
     background-color: #fff;
-    padding: 16px 0;
-    min-width: 160px;
+    padding: 1rem 0;
+    min-width: 10rem;
 }
 .buttons__button:hover {
     background-color: #e0e0e0;
 }
 .buttons__text {
-    font-size: 22px;
+    font-size: 1rem;
     font-weight: bold;
-    padding: 0px;
+    padding: 0;
 }
 .buttons__image {
-    width: 140px;
-    height: 140px;
+    width: 8.75rem;
+    height: 8.75rem;
     display: block;
     margin: 0 auto;
 }
 .languages {
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 .languages__title {
-    margin-bottom: 18px;
+    margin-bottom: 1.125rem;
     font-size: 2.5rem;
 }
 .languages__button {
     display: inline-block;
-    margin: 0 18px;
-    padding: 18px 32px;
+    margin: 0 1.125rem;
+    padding: 1.125rem 2rem;
     background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 8px;
+    border: 0.125rem solid #000;
+    border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .languages__button:hover {
     background-color: #e0e0e0;
 }
 .languages__flag {
-    width: 64px;
-    height: 48px;
+    width: 4rem;
+    height: 3rem;
     display: inline-block;
     vertical-align: middle;
 }
 .languages__button .languages__flag {
-    margin-bottom: 12px;
+    margin-bottom: 0.75rem;
 }

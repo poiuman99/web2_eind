@@ -180,11 +180,11 @@
 
 
   {
-    "id": "snack-frikandel",
-    "name": "Frikandel",
+    "id": "snack-curryworst",
+    "name": "Curryworst",
     "price": 2.00,
     "category": "Snacks",
-    "image": "/img/frikandel.jpg",
+    "image": "/img/curryworst.webp",
     "options": []
   },
 {
@@ -192,8 +192,7 @@
     "name": "Curryworst Special",
     "price": 3.00,
     "category": "Snacks",
-    "image": "/img/curryworst.png",
-    "description": "Lekkere curryworst met een saus naar keuze.",
+    "image": "/img/curry special.webp",
     "options": [
       {
         "type": "single-choice",
@@ -207,10 +206,134 @@
       }
     ]
   },
+  {
+    "id": "snack-curryworst xl",
+    "name": "Curryworst XL",
+    "price": 3.20,
+    "category": "Snacks",
+    "image": "/img/curryworst xl.webp",
+    "options": []
+  },{
+    "id": "snack-curryworst xl special",
+    "name": "Curryworst XL Special",
+    "price": 4.20,
+    "category": "Snacks",
+    "image": "/img/curryworst xl special.webp",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Sauce",
+        "choices": [
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
+  },
+  {
+    "id": "snack-belcrunch",
+    "name": "Belcrunch",
+    "price": 3.50,
+    "category": "Snacks",
+    "image": "/img/belcrunch ss.webp",
+    "options": []
+  },
+  {
+    "id": "snack-boulet",
+    "name": "Boulet",
+    "price": 2.50,
+    "category": "Snacks",
+    "image": "/img/boulet.webp",
+    "options": []
+  },
+  {
+    "id": "snack-boulet special",
+    "name": "Boulet Special",
+    "price": 3.50,
+    "category": "Snacks",
+    "image": "/img/boulet special.webp",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Sauce",
+        "choices": [
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
+  },
+  {
+    "id": "snack-cervela",
+    "name": "Cervela",
+    "price": 3.00,
+    "category": "Snacks",
+    "image": "/img/cervela.webp",
+    "options": []
+  },
+  {
+    "id": "snack-cervela special",
+    "name": "Cervela Special",
+    "price": 4.00,
+    "category": "Snacks",
+    "image": "/img/cervela.webp",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Sauce",
+        "choices": [
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
+  },
+  {
+    "id": "snack-viandel",
+    "name": "Viandel",
+    "price": 2.80,
+    "category": "Snacks",
+    "image": "/img/viandel.webp",
+    "options": []
+  },
+  {
+    "id": "snack-viandel special",
+    "name": "Viandel Special",
+    "price": 3.80,
+    "category": "Snacks",
+    "image": "/img/viandel.webp",
+    "options": [
+      {
+        "type": "single-choice",
+        "name": "Sauce",
+        "choices": [
+          { "label": "Curry Ketchup", "value": "curry", "price_change": 0.00 },
+          { "label": "Tomato ketchup", "value": "ketchup", "price_change": 0.00 }
+        ],
+        "required": true,
+        "default": "curry"
+      }
+    ]
+  },
+  {
+    "id": "snack-spicy viandel",
+    "name": "Spicy Viandel",
+    "price": 2.80,
+    "category": "Snacks",
+    "image": "/img/spciy viandel.webp",
+    "options": []
+  },
+
 
 
   {
-    "id": "snack-sate",
+    "id": "satés-sate",
     "name": "Saté",
     "price": 4.80,
     "category": "Satés",
@@ -218,7 +341,7 @@
     "options": []
   },
   {
-    "id": "snack-kipsate",
+    "id": "satés-kipsate",
     "name": "Chicken-Saté",
     "price": 4.80,
     "category": "Satés",
@@ -226,7 +349,7 @@
     "options": []
   },
   {
-    "id": "snack-vissate",
+    "id": "satés-vissate",
     "name": "Fish- Saté",
     "price": 4.50,
     "category": "Satés",
@@ -234,7 +357,7 @@
     "options": []
   },
   {
-    "id": "snack-kippenboutjes",
+    "id": "satés-kippenboutjes",
     "name": "Drumsticks",
     "price": 4.50,
     "category": "Satés",
@@ -242,7 +365,7 @@
     "options": []
   },
   {
-    "id": "snack-sito",
+    "id": "satés-sito",
     "name": "Stio Gold",
     "price": 4.50,
     "category": "Satés",
@@ -250,7 +373,7 @@
     "options": []
   },
   {
-    "id": "snack-zigeuner",
+    "id": "satés-zigeuner",
     "name": "Zigeunerstick",
     "price": 3.50,
     "category": "Satés",
@@ -258,7 +381,7 @@
     "options": []
   },
   {
-    "id": "snack-crizly",
+    "id": "satés-crizly",
     "name": "Crizly",
     "price": 4.50,
     "category": "Satés",
@@ -266,7 +389,7 @@
     "options": []
   },
   {
-    "id": "snack-Berepoot",
+    "id": "satés-Berepoot",
     "name": "Berepoot",
     "price": 3.50,
     "category": "Satés",
@@ -274,7 +397,7 @@
     "options": []
   },
   {
-    "id": "snack-Belcrunch",
+    "id": "satés-Belcrunch",
     "name": "Belcrunch DELUXE",
     "price": 4.50,
     "category": "Satés",
@@ -283,9 +406,82 @@
   },
  
 
+  {
+    "id": "fingerfood-chickies",
+    "name": "Chickies (6 pieces)",
+    "price": 3.80,
+    "category": "Fingerfood",
+    "image": "/img/chickies.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-nuggiz",
+    "name": "Nuggiz (5 pieces)",
+    "price": 3.80,
+    "category": "Fingerfood",
+    "image": "/img/nuggiz.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-chicken strips",
+    "name": "Chicken Strips (4 pieces)",
+    "price": 4.50,
+    "category": "Fingerfood",
+    "image": "/img/strips.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-bitterballen",
+    "name": "Bitterballen (5 pieces)",
+    "price": 3.00,
+    "category": "Fingerfood",
+    "image": "/img/bitterballen.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-kaasballetjes",
+    "name": "Cheese Balls (5 pieces)",
+    "price": 3.00,
+    "category": "Fingerfood",
+    "image": "/img/kaasballetjes.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-mini-loempia",
+    "name": "Mini Springrolls (5 pieces)",
+    "price": 4.00,
+    "category": "Fingerfood",
+    "image": "/img/mini loempia.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-bamiballetjes",
+    "name": "Bamiballs (5 pieces)",
+    "price": 3.50,
+    "category": "Fingerfood",
+    "image": "/img/bamiballetjes.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-calameres",
+    "name": "Calamares (5 pieces)",
+    "price": 3.50,
+    "category": "Fingerfood",
+    "image": "/img/calamares.webp",
+    "options": []
+  },
+  {
+    "id": "fingerfood-classics",
+    "name": "Mini Classics",
+    "price": 5.00,
+    "category": "Fingerfood",
+    "image": "/img/mini classics.webp",
+    "options": []
+  },
+
 
   {
-    "id": "snack-kaaskroket",
+    "id": "krokets-kaaskroket",
     "name": "Cheesekroket",
     "price": 3.00,
     "category": "Krokets",
@@ -293,7 +489,7 @@
     "options": []
   },
    {
-    "id": "snack-garnaalkroket",
+    "id": "krokets-garnaalkroket",
     "name": "Chrimpkroket",
     "price": 4.00,
     "category": "Krokets",
@@ -301,7 +497,7 @@
     "options": []
   },
    {
-    "id": "snack-goulashkroket",
+    "id": "krokets-goulashkroket",
     "name": "Goulashkroket",
     "price": 3.00,
     "category": "Krokets",
@@ -309,7 +505,7 @@
     "options": []
   },
    {
-    "id": "snack-vleeskroket",
+    "id": "krokets-vleeskroket",
     "name": "Meatkroket",
     "price": 3.00,
     "category": "Krokets",
@@ -317,7 +513,7 @@
     "options": []
   },
    {
-    "id": "snack-ragouzi",
+    "id": "krokets-ragouzi",
     "name": "Ragouzi",
     "price": 3.00,
     "category": "Krokets",

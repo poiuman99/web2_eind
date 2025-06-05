@@ -1,4 +1,4 @@
-// src/components/ProductModal.js
+
 import React, { useState, useEffect } from 'react';
 import '../css/productModal.css';
 
@@ -6,7 +6,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState({});
 
-  // Initialize default options
+
   useEffect(() => {
     if (product.options) {
       const defaults = {};
@@ -62,7 +62,7 @@ const ProductModal = ({ product, onAddToCart, onClose }) => {
         <img src={product.image} alt={product.name} className="modal-product-image" />
         <p className="product-price">€{product.price.toFixed(2)}</p>
 
-        {/* Product options */}
+        
         {product.options?.map(option => (
           <div key={option.name} className="modal-option-group">
             <h4>{option.name}:</h4>

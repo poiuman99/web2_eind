@@ -1,4 +1,3 @@
-/* Jouw bestaande CSS - ONGEWIJZIGD */
 body.payment {
     margin: 0;
     padding: 0;
@@ -30,7 +29,7 @@ body.payment {
 
 .payment__logo {
     width: 80vw;
-    max-width: 300px;
+    max-width: 18.75rem;
     height: auto;
     margin-bottom: 2vh;
 }
@@ -38,8 +37,33 @@ body.payment {
 .payment__title {
     font-size: 2rem;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     text-align: center;
+}
+.payment__back {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    display: inline-block;
+    margin: 0;
+    padding: 0.7rem 2rem;
+    background: #fff;
+    color: #000;
+    border: 0.125rem solid #000;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    text-decoration: none;
+    z-index: 10;
+}
+.payment__back:hover, .payment__back:focus {
+    background: #000;
+    color: #fff700;
+    transform: translateY(-0.125rem) scale(1.04);
+    outline: none;
 }
 
 .payment__options {
@@ -49,16 +73,16 @@ body.payment {
     justify-content: center;
     gap: 1.5rem;
     width: 95%;
-    max-width: 340px;
+    max-width: 21.25rem;
 }
 
 .payment-option {
     background: #fff;
-    border: 2px solid #000;
-    border-radius: 16px;
+    border: 0.125rem solid #000;
+    border-radius: 1rem;
     padding: 2rem;
     width: 100%;
-    min-height: 150px;
+    min-height: 9.375rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,9 +98,9 @@ body.payment {
 
 .payment-option__img {
     width: 100%;
-    max-height: 110px;
+    max-height: 6.875rem;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     margin-bottom: 2rem;
 }
 
@@ -94,33 +118,29 @@ body.payment {
     text-align: center;
 }
 
-/* --- NIEUWE STIJLEN VOOR BETALINGSVERWERKING EN SUCCESMELDING --- */
-
-/* Algemene basis voor de verwerkings- en succes-schermen */
 .payment-processing-screen,
 .payment-success-screen {
-    position: absolute; /* Plaats over de bestaande inhoud heen */
-    top: 50%; /* Centreer verticaal */
-    left: 50%; /* Centreer horizontaal */
-    transform: translate(-50%, -50%); /* Pas aan voor precieze centrering */
-    width: 90%; /* Breedte, aanpasbaar */
-    max-width: 400px; /* Maximale breedte */
-    padding: 30px;
-    background-color: #ffffff; /* Schone witte achtergrond */
-    border: 2px solid #000; /* Zwarte rand, passend bij je bestaande stijl */
-    border-radius: 20px; /* Afgeronde hoeken */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Duidelijke, zachte schaduw */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 25rem;
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border: 0.125rem solid #000;
+    border-radius: 1.25rem;
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 300px; /* Voldoende hoogte voor de content */
-    z-index: 1000; /* Zorgt ervoor dat het boven de rest ligt */
-    animation: fadeInScale 0.4s ease-out forwards; /* Mooie fade-in met schaal effect */
+    min-height: 18.75rem;
+    z-index: 1000;
+    animation: fadeInScale 0.4s ease-out forwards;
 }
 
-/* Animatie voor het in beeld komen van de schermen */
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -132,80 +152,112 @@ body.payment {
     }
 }
 
-/* Stijl voor de tekst "Volg de stappen op het betaalapparaat..." */
 .processing-text {
-    font-size: 1.8rem; /* Iets groter en duidelijker */
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #333; /* Donkergrijs */
-    margin-bottom: 40px; /* Meer ruimte onder de tekst */
+    color: #333;
+    margin-bottom: 2.5rem;
 }
 
-/* De laadspinner */
 .spinner {
-    border: 8px solid #f3f3f3; /* Lichtgrijs */
-    border-top: 8px solid #007bff; /* Een mooie, duidelijke blauwe kleur */
+    border: 0.5rem solid #f3f3f3;
+    border-top: 0.5rem solid #007bff;
     border-radius: 50%;
-    width: 80px; /* Groter */
-    height: 80px; /* Groter */
-    animation: spin 1.2s linear infinite; /* Sneller en vloeiender spinnen */
+    width: 5rem;
+    height: 5rem;
+    animation: spin 1.2s linear infinite;
 }
 
-/* Keyframes voor de spinner animatie */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Styling voor het vinkje en de cirkel op het succes-scherm */
 .checkmark-circle {
-    width: 120px; /* Grotere cirkel */
-    height: 120px;
+    width: 7.5rem;
+    height: 7.5rem;
     border-radius: 50%;
-    background-color: #28a745; /* Vriendelijk groen */
+    background-color: #28a745;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3); /* Zachte groene schaduw */
-    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Mooie 'pop' animatie */
+    margin-bottom: 1.875rem;
+    box-shadow: 0 0.5rem 1.25rem rgba(40, 167, 69, 0.3);
+    animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
 }
 
-/* Keyframes voor de 'pop' animatie van de cirkel */
 @keyframes popIn {
     0% { transform: scale(0); opacity: 0; }
-    70% { transform: scale(1.15); opacity: 1; } /* Even groter dan uiteindelijke grootte */
+    70% { transform: scale(1.15); opacity: 1; }
     100% { transform: scale(1); }
 }
 
 .checkmark {
-    color: white; /* Wit vinkje */
-    font-size: 5rem; /* Zeer groot vinkje */
+    color: white;
+    font-size: 5rem;
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Lichte schaduw voor diepte */
+    text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.2);
 }
 
-/* Stijl voor de tekst "Betaling geslaagd!" */
 .success-message {
-    font-size: 2rem; /* Groot en duidelijk */
-    color: #28a745; /* Passend groen */
+    font-size: 2rem;
+    color: #28a745;
     font-weight: bold;
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
-    animation: fadeIn 0.8s ease-out 0.2s forwards; /* Fade-in met een kleine vertraging */
+    text-shadow: 0.03125rem 0.03125rem 0.0625rem rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
 }
 
-/* Algemene fade-in animatie (hergebruikt) */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Media query voor kleinere schermen om de elementen compacter te maken */
+.payment-cash-instruction-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 25rem;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border: 0.125rem solid #000;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 15.625rem;
+  z-index: 1000;
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+.cash-instruction-text {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 480px) {
+  .payment-cash-instruction-screen {
+    padding: 1.25rem;
+    min-height: 12.5rem;
+  }
+  .cash-instruction-text {
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 480px) {
     .payment-processing-screen,
     .payment-success-screen {
-        padding: 20px;
-        max-width: 95%; /* Neemt meer van de beschikbare breedte in */
-        min-height: 250px;
+        padding: 1.25rem;
+        max-width: 95%;
+        min-height: 15.625rem;
     }
 
     .processing-text {
@@ -213,13 +265,13 @@ body.payment {
     }
 
     .spinner {
-        width: 60px;
-        height: 60px;
+        width: 3.75rem;
+        height: 3.75rem;
     }
 
     .checkmark-circle {
-        width: 90px;
-        height: 90px;
+        width: 5.625rem;
+        height: 5.625rem;
     }
 
     .checkmark {

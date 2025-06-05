@@ -1,50 +1,48 @@
-import React, { useState } from 'react'; // Import useState
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 const Payment = React.forwardRef((props, ref) => {
   const navigate = useNavigate();
-  const { cart, removeFromCart, totalCartPrice } = useCart();
+  const { cart, removeFromCart, totalCartPrice, clearCart } = useCart();
   const [showPaymentProcessing, setShowPaymentProcessing] = useState(false);
-  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false); // Nieuwe state voor succesanimatie
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
+  const [showCashInstruction, setShowCashInstruction] = useState(false);
 
-  // Functie voor de klik op contant betalen
   const handleCashClick = () => {
-    navigate('/thankyou');
+    setShowCashInstruction(true);
+    setTimeout(() => {
+      clearCart();
+      navigate('/thankyou');
+    }, 3000);
   };
 
-  // Functie voor de klik op kaart betalen (nu met verwerking en succesanimatie)
   const handleCardClick = () => {
-    setShowPaymentProcessing(true); // Toon het "Volg stappen" scherm
-    setShowSuccessAnimation(false); // Zorg dat succesanimatie verborgen is bij start
+    setShowPaymentProcessing(true);
+    setShowSuccessAnimation(false);
 
-    // Simuleer betaalverwerkingstijd (bijv. 3 seconden)
     setTimeout(() => {
-      setShowPaymentProcessing(false); // Verberg "Volg stappen" scherm
-      setShowSuccessAnimation(true); // Toon succesanimatie
+      setShowPaymentProcessing(false);
+      setShowSuccessAnimation(true);
 
-      // Na een korte tijd de succesanimatie te hebben getoond, navigeer naar bedankpagina
       setTimeout(() => {
+        clearCart();
         navigate('/thankyou');
-      }, 1500); // Toon succesanimatie voor 1.5 seconden
-    }, 3000); // Verwerking duurt 3 seconden
+      }, 1500);
+    }, 3000);
   };
 
   return (
     <div className="payment" ref={ref}>
       <div className="payment__container">
-        {/* Betalingsbedrag en Terugknop blijven altijd zichtbaar */}
+        <div className="payment__title">Payment</div>
         <div className="payment__amount">
           <span className="payment__amount-value">Total= €{totalCartPrice.toFixed(2)}</span>
         </div>
-        <div className="payment__title">Payment</div>
         <div className="payment__back">
           <Link to="/menu" className="payment__back-button">&larr; Back</Link>
         </div>
-
-        {/* Conditionele rendering voor de verschillende schermen */}
-        {!showPaymentProcessing && !showSuccessAnimation ? (
-          // Toon betaalopties als er niets wordt verwerkt en er geen succes is
+        {!showPaymentProcessing && !showSuccessAnimation && !showCashInstruction ? (
           <div className="payment__options">
             <div
               className="payment-option"
@@ -64,20 +62,22 @@ const Payment = React.forwardRef((props, ref) => {
             </div>
           </div>
         ) : showPaymentProcessing ? (
-          // Toon betaalverwerkingsscherm
           <div className="payment-processing-screen">
-            <p className="processing-text">Volg de stappen op het betaalapparaat...</p>
-            <div className="spinner"></div> {/* Laadspinner */}
+            <p className="processing-text">Follow the steps on the payment device....</p>
+            <div className="spinner"></div>
           </div>
-        ) : (
-          // Toon betaling geslaagd animatiescherm
+        ) : showSuccessAnimation ? (
           <div className="payment-success-screen">
             <div className="checkmark-circle">
-              <div className="checkmark">&#10004;</div> {/* Unicode vinkje */}
+              <div className="checkmark">&#10004;</div>
             </div>
-            <p className="success-message">Betaling geslaagd!</p>
+            <p className="success-message">Payment successful!</p>
           </div>
-        )}
+        ) : showCashInstruction ? (
+          <div className="payment-cash-instruction-screen">
+            <p className="cash-instruction-text">Pay at the cash register</p>
+          </div>
+        ) : null}
       </div>
     </div>
   );
